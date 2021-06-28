@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html>
+<head>
+<title> version Control</title>
+<!-- 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+
+<link href='icons/css/all.css' rel='stylesheet' type='text/css'>
+ -->
+
+ <meta charset='utf-8'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link type='text/css' href='bootstrap.css' rel='stylesheet'>
+
+<link type='text/css' href='' rel='stylesheet'>
+
+<style type="text/css">
+
+div{
+	border: 0px solid red;
+	min-height: 200px;
+	box-sizing:border-box;
+
+}
+
+</style>
+
+
+</head>
+
+<body id='bg'>
+
+<div class='container-fluid'>
+
+<div class="row">
+  
+  <div class="col-12" id='message'>
+     <h2>GradeSheet Correction</h2>
+   <table class="table">
+      <tr>
+        <th>Subject</th>
+        <th>Score</th>
+         <th>Grade</th>
+      </tr>
+       <tr>
+        <td>English</td>
+        <td>
+    <input type="text" onchange="calculateResult(this.value,'grade1')" id="score1">
+
+        </td>
+        <td id='grade1'></td>
+      </tr>
+        <tr>
+        <td>Chemistry</td>
+        <td>
+  <input type="text" onchange="calculateResult(this.value,'grade2')" id="score2"></td>
+        <td id='grade2'></td>
+      </tr>
+        <tr>
+        <td>Maths</td>
+        <td><input type="text" id="score3" onchange="calculateResult(this.value,'grade3')"></td>
+        <td id='grade3'></td>
+      </tr>
+      <tr>
+        <td>Economics</td>
+        <td><input type="text" onchange="calculateResult(this.value,'grade4')" id="score4"></td>
+        <td id='grade4'></td>
+      </tr>
+
+        <tr>
+        <td>Biology</td>
+        <td><input type="text" id="score5" onchange="calculateResult(this.value,'grade5')"></td>
+        <td id='grade5'></td>
+      </tr>
+
+       <tr>
+        <td><button class="btn btn-sm btn-primary" onclick="getTotal()">Get Result</button></td>
+        <td id='total'></td>
+        <td></td>
+      </tr>
+ 
+   </table>
+  </div>
+</div>
+
+<script src='myscript.js'></script>
+
+
+<script type="">
+
+
+ function calculateResult(score,display){
+   
+        if(score <=40){
+          document.getElementById(display).innerHTML = 'F';
+        }else if(score > 40 && score <= 45){
+          document.getElementById(display).innerHTML = 'E';
+        }
+        else if(score > 45 && score < 50){
+          document.getElementById(display).innerHTML = 'D';
+        }
+        else if(score >= 50 && score < 60){
+          document.getElementById(display).innerHTML = 'C';
+        }
+        else if(score >= 60 && score < 70){
+          document.getElementById(display).innerHTML = 'B';
+        }
+         else if(score >= 70&& score <= 100){
+          document.getElementById(display).innerHTML = 'A';
+        }else{
+          alert('Please enter a valid score');
+           
+        }
+ }
+
+
+function getTotal(){
+  var total = Number(document.getElementById('score1').value)
+  + Number(document.getElementById('score2').value)
+  + Number(document.getElementById('score3').value)
+  + Number(document.getElementById('score4').value)
+  + Number(document.getElementById('score5').value)
+  alert(total);
+}
+</script>
+ 
+
+</body>
+</html>
